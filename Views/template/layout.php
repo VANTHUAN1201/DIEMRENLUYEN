@@ -73,21 +73,21 @@
                     <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="" class="nav-link active">
+                        <a href="" class="nav-link" id="home">
+                            <i class="nav-icon fas fa-search"></i>
+                            <p>Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" id="find">
                             <i class="nav-icon fas fa-search"></i>
                             <p>Tìm kiếm sinh viên</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="" class="nav-link" id="tieuchi">
                             <i class="nav-icon fas fa-search"></i>
-                            <p>Tìm kiếm sinh viên</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="nav-icon fas fa-search"></i>
-                            <p>Tìm kiếm sinh viên</p>
+                            <p>Quản lí tiêu chí</p>
                         </a>
                     </li>
                 </ul>
