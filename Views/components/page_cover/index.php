@@ -6,7 +6,7 @@
             setcookie("user", $_REQUEST['user'], time() + 3000, "/");
             echo '<script>
                 alert("đăng nhập thành công")
-                location.href = ".?option=home"
+                location.href = ".?option=diemrenluyen"
             </script>';
         }else
             echo '<script>
@@ -32,7 +32,10 @@
                     </tr>
                     <tr>
                         <td>Mật khẩu: </td>
-                        <td><input type="text" name="pw" id="pw" placeholder="mật khẩu"></td>
+                        <td><div style="position: relative;">
+                            <input type="password" name="pw" id="pw" placeholder="mật khẩu">
+                            <img src="Public/images/show.png" id="hide_show" style="position: absolute;width:30px;height:20px; top:5px;left:85%;" alt="">
+                        </div></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -47,6 +50,21 @@
         </form>
     </div>
 </div>
-<style>
-
-</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#hide_show').click(function(){
+            if(document.getElementById('pw').type == 'password'){
+                document.getElementById('pw').type ='text'
+                document.getElementById('hide_show').src = String(document.getElementById('hide_show').src).replace('show','hide')
+            }
+                
+            else{
+                document.getElementById('pw').type ='password'
+                document.getElementById('hide_show').src=String(document.getElementById('hide_show').src).replace('hide','show')
+            }
+                
+        })
+    })
+</script>
