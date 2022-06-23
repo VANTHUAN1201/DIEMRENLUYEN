@@ -57,10 +57,10 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="Public/template/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="Public/images/avt.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Nguyễn Văn Thún</a>
+                    <a href="#" class="d-block"><strong>Nguyễn Văn Thún</strong></a>
                 </div>
             </div>
 
@@ -74,7 +74,7 @@
                         with font-awesome or any other icon font library -->
                     <li class="nav-item">
                         <a href="" class="nav-link" id="home">
-                            <i class="nav-icon fas fa-search"></i>
+                            <i class="nav-icon fas fa-home"></i>
                             <p>Trang chủ</p>
                         </a>
                     </li>
@@ -86,7 +86,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link" id="tieuchi">
-                            <i class="nav-icon fas fa-search"></i>
+                            <i class="nav-icon fas fa-table"></i>
                             <p>Quản lí tiêu chí</p>
                         </a>
                     </li>

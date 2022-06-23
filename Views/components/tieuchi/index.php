@@ -1,9 +1,3 @@
-<?php 
-//     if(!isset($_COOKIE["user"]))
-//     echo '<script>
-//     location.href = "index.php"
-// </script>';
-?>
 <div class="wrapper">
   <div class="content-header">
       <div class="container-fluid">
@@ -58,4 +52,3 @@
     </div>
   </div>
   <!-- main content  -->
-    
