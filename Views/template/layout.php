@@ -91,6 +91,12 @@
                             <p>Quản lí tiêu chí</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href=".?option=tieuchi" class="nav-link" id="tieuchi">
+                            <i class="nav-icon fas fa-power"></i>
+                            <p>Đăng xuất</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
