@@ -61,7 +61,7 @@
                     <img src="Public/images/avt.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><strong><?php echo $user->getName();?></strong></a>
+                    <a href=".?option=profile" class="d-block"><strong><?php echo $user->getName();?></strong></a>
                 </div>
             </div>
 
@@ -92,7 +92,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href=".?option=tieuchi" class="nav-link" id="tieuchi">
+                        <a href="index.php" class="nav-link" id="tieuchi">
                             <i class="nav-icon fas fa-power"></i>
                             <p>Đăng xuất</p>
                         </a>

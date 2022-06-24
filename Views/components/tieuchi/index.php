@@ -4,7 +4,13 @@
     echo '<script>
     location.href = "index.php"
 </script>';
-$tc = loadModel('tieuchi');
+$tc = loadModel('Tieuchi');
+if(isset($_REQUEST['IDTC'])){
+  if($tc->remove($_REQUEST['IDTC']))
+      echo '<script>alert("xóa thành công")</script>';
+  else
+      echo '<script>alert("có lỗi")</script>';
+}
 $dm = $tc->getDM();
 ?>
 <div class="wrapper">
@@ -64,9 +70,10 @@ $dm = $tc->getDM();
                           while($rowtc = mysqli_fetch_assoc($rtc)){
                             ?>
                               <tr>
-                                <td style="width:500px;"><?php echo $rowtc['tentieuchi'] ?></td>
+                                <td style="width:450px;"><?php echo $rowtc['tentieuchi'] ?></td>
                                 <td><?php echo $rowtc['diemtoida'] ?></td>
                                 <td><a href="<?php echo ".?option=tieuchi&IDTC=".$rowtc['ID_tieuchi'] ?>">Xóa</a></td>
+                                <td><a href="<?php echo ".?option=tieuchi&sub_option=update&IDTC=".$rowtc['ID_tieuchi'] ?>">sửa</a></td>
                               </tr>
                             <?php
                           }
