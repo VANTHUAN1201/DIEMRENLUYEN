@@ -52,3 +52,16 @@
     </div>
   </div>
   <!-- main content  -->
+  <!-- add class active  -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+        var home = document.getElementById('home')
+        home.classList.remove('active')
+        var find = document.getElementById('find')
+        find.classList.remove('active')
+        var tieuchi = document.getElementById('tieuchi')
+        tieuchi.classList.add('active')
+    })
+</script>

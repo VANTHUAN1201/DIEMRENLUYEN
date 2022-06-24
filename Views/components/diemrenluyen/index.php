@@ -1,8 +1,8 @@
 <?php 
-//     if(!isset($_COOKIE["user"]))
-//     echo '<script>
-//     location.href = "index.php"
-// </script>';
+    if(!isset($_COOKIE["user"]))
+    echo '<script>
+    location.href = "index.php"
+</script>';
 ?>
 <div class="wrapper">
   <div class="content-header">
@@ -58,4 +58,16 @@
     </div>
   </div>
   <!-- main content  -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(document).ready(function(){
+        var home = document.getElementById('home')
+        home.classList.add('active')
+        var find = document.getElementById('find')
+        find.classList.remove('active')
+        var tieuchi = document.getElementById('tieuchi')
+        tieuchi.classList.remove('active')
+    })
+</script>
     

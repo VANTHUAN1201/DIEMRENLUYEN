@@ -33,6 +33,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <?php 
     if(isset($_REQUEST['option'])){
+        $user = loadModel('User');
         ?>
         
         
@@ -60,7 +61,7 @@
                     <img src="Public/images/avt.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block"><strong>Nguyễn Văn Thún</strong></a>
+                    <a href="#" class="d-block"><strong><?php echo $user->getName();?></strong></a>
                 </div>
             </div>
 
@@ -73,19 +74,19 @@
                     <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="" class="nav-link" id="home">
+                        <a href=".?option=diemrenluyen" class="nav-link" id="home">
                             <i class="nav-icon fas fa-home"></i>
                             <p>Trang chủ</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" id="find">
+                        <a href=".?option=find" class="nav-link" id="find">
                             <i class="nav-icon fas fa-search"></i>
                             <p>Tìm kiếm sinh viên</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link" id="tieuchi">
+                        <a href=".?option=tieuchi" class="nav-link" id="tieuchi">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Quản lí tiêu chí</p>
                         </a>
