@@ -35,7 +35,7 @@ else{
                 <form action="" method="post">
                 <div class="col-md-8 offset-md-2" style="display: flex!important; justify-content:space-between;width:100%!important;flex: 0 0 100%!important;max-width:100%;margin-left:0!important;">
                     
-                        <div class="form-group" style="margin-right:100px;">
+                <div class="form-group" style="margin-right:100px;">
                             <label>Lọc theo Khoa</label>
                             <select class="form-control" name="khoa" id="khoa">
                                 <option value="">Tất cả</option>
@@ -57,7 +57,7 @@ else{
                             </select>
                         </div>
                         <div class="input-group">
-                            <input type="search" name="findtext" id="find" class="form-control form-control-lg" placeholder="nhập từ khóa tìm kiếm...">
+                            <input type="search" name="findtext" id="find" <?php if(isset($_REQUEST['findtext'])) echo  'value="'.$_REQUEST['findtext'].'"'; ?> class="form-control form-control-lg" placeholder="nhập từ khóa tìm kiếm...">
                             <div class="input-group-append">
                                 <input type="submit" name="find" value="tìm kiếm" style="height:47px;">
                             </div>
@@ -70,13 +70,11 @@ else{
                     <tr>
                         <th style="width: 10px">STT</th>
                         <th style="width:200px;">Tên sinh viên</th>
-                        <th style="width:100px;">Ngày sinh</th>
-                        <th style="width:100px;">SĐT</th>
-                        <th style="width:100px;">CCCD</th>
-                        <th style="width:150px;">Email</th>
+                        <th style="width:100px;">Điểm</th>
                         <th style="width:100px;">Đối tượng</th>
                         <th style="width:150px;">Khoa</th>
                         <th style="width:70px;">Lớp</th>
+                        <th style="width:100px;">Học Kỳ</th>
                     </tr>
                 </thead>
                 <tbody id="tbody">
@@ -88,13 +86,11 @@ else{
                                 <tr>
                                     <td><?php echo $stt++ ?></td>
                                     <td><?php echo $row['hoten']; ?></td>
-                                    <td><?php echo $row['ngaysinh']; ?></td>
-                                    <td><?php echo $row['sdt']; ?></td>
-                                    <td><?php echo $row['cccd']; ?></td>
-                                    <td><?php echo $row['email']; ?></td>
+                                    <td><?php echo $row['diemhoctap']; ?></td>
                                     <td><?php echo $row['tendoituong']; ?></td>
                                     <td><?php echo $row['tenkhoa']; ?></td>
                                     <td><?php echo $row['ID_lop']; ?></td>
+                                    <td><?php echo $row['tenhocky']; ?></td>
                                 </tr>
                                 <?php
                             }
