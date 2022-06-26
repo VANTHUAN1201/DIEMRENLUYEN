@@ -55,6 +55,17 @@ class User extends Database{
         }
         return $email;
     }
+    function getDT(){
+        $sql ="select * from tblnguoidung where TK = '".$_COOKIE['user']."'";
+        $result = mysqli_query($this->conn,$sql);
+        $DT ="";
+        if(mysqli_num_rows($result)>0){
+            while($row = mysqli_fetch_assoc($result)){
+                $DT = $row['ID_DT'];
+            }
+        }
+        return $DT;
+    }
     function update($ht,$ns,$cccd,$sdt,$email){
         $sql = "update tblnguoidung set hoten =N'".$ht."', ngaysinh = '".$ns."', cccd = '".$cccd."',sdt = '".$sdt."', email = '".$email."' where TK = '".$_COOKIE['user']."'";
         if(mysqli_query($this->conn,$sql))

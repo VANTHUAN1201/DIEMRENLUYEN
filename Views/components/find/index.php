@@ -2,8 +2,10 @@
 <?php 
     if(!isset($_COOKIE["user"]))
     echo '<script>
+    alert("bạn phải đăng nhập trước")
     location.href = "index.php"
 </script>';
+
 $khoa = loadModel('Khoa');
 $rkhoa = $khoa->get();
 $sv = loadModel('Student');
