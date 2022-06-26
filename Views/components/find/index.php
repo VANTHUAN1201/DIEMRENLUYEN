@@ -4,12 +4,20 @@
     echo '<script>
     location.href = "index.php"
 </script>';
+$khoa = loadModel('Khoa');
+$rkhoa = $khoa->get();
 $sv = loadModel('Student');
+$mk = '';
+if(isset($_REQUEST['khoa']))
+    $mk =$_REQUEST['khoa'];
 if(isset($_REQUEST['find'])){
-    $result = $sv->findSV($_REQUEST['findtext']);
+    $result = $sv->findSV($_REQUEST['findtext'],$mk);
 }
-else
-$result = $sv->getSV();
+else{
+    $result = $sv->getSV($mk);
+}
+
+
 ?>
 <!-- body layout -->
 <form action="" method="post" >
@@ -22,16 +30,38 @@ $result = $sv->getSV();
         <!-- /.card-header -->
         <div class="card-body">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <form action="" method="post" >
+                <form action="" method="post">
+                <div class="col-md-8 offset-md-2" style="display: flex!important; justify-content:space-between;width:100%!important;flex: 0 0 100%!important;max-width:100%;margin-left:0!important;">
+                    
+                        <div class="form-group" style="margin-right:100px;">
+                            <label>Lọc theo Khoa</label>
+                            <select class="form-control" name="khoa" id="khoa">
+                                <option value="">Tất cả</option>
+                                <?php
+                                    if(mysqli_num_rows($rkhoa)){
+                                        while($row = mysqli_fetch_assoc($rkhoa)){
+                                            if($row['ID_khoa'] == $mk){
+                                            ?>
+                                            <option value="<?php echo $row['ID_khoa']; ?>" selected><?php echo $row['tenkhoa']; ?></option>
+                                            <?php
+                                            }else {
+                                                ?>
+                                                <option value="<?php echo $row['ID_khoa']; ?>"><?php echo $row['tenkhoa']; ?></option>
+                                                <?php
+                                            }
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </div>
                         <div class="input-group">
                             <input type="search" name="findtext" id="find" class="form-control form-control-lg" placeholder="nhập từ khóa tìm kiếm...">
                             <div class="input-group-append">
-                                <input type="submit" name="find" value="tìm kiếm">
+                                <input type="submit" name="find" value="tìm kiếm" style="height:47px;">
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
             <table class="table table-bordered">
                 <thead>
@@ -86,5 +116,19 @@ $result = $sv->getSV();
         find.classList.add('active')
         var tieuchi = document.getElementById('tieuchi')
         tieuchi.classList.remove('active')
+        $('#khoa').change(function(){
+            var mk = $(this).val();
+            $.ajax({
+                url: 'Models/Filter_khoa.php',
+                type: 'post',
+                data:{
+                    mk: mk
+                },
+                success: function(data){
+                    document.getElementById('tbody').innerHTML = '';
+                    $('#tbody').append(data);
+                }
+            })
+        })
     })
 </script>
